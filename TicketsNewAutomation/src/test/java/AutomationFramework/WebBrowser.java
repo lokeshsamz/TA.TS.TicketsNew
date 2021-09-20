@@ -12,7 +12,7 @@ public class WebBrowser {
 		if(driver == null)
 		{
 			String currentDir = System.getProperty("user.dir");
-			System.setProperty("webdriver.chrome.exe", currentDir + "/TicketsNewAutomation/Drivers/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", currentDir + "/Drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 	}

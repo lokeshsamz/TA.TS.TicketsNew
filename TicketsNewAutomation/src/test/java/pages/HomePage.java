@@ -22,7 +22,7 @@ public class HomePage {
 	public void ClickMovieName(String movieName)
 	{
 		String locatorToClick = IElementRepo.Txt_HomePage_MovieName.replace("M_MovieName", movieName);
-		this.browserUtils.MoverHoverandClickElement(IElementRepo.tab_HomePage_Movies, By.xpath(locatorToClick));
+		this.browserUtils.MouseHoverandClickElement(IElementRepo.tab_HomePage_Movies, By.xpath(locatorToClick));
 	}
 
 }

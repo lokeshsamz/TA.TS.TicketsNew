@@ -14,6 +14,6 @@ public class WebBrowserHooks {
 	@AfterClass
 	public void CloseBrowserSetup()
 	{
-		WebBrowser.CloseBrowser();
+		//WebBrowser.CloseBrowser();
 	}
 }

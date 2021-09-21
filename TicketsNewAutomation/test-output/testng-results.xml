@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-09-20T10:42:24 IST" name="Default suite" finished-at="2021-09-20T10:42:45 IST" duration-ms="20741">
+  <suite started-at="2021-09-21T18:14:09 IST" name="Default suite" finished-at="2021-09-21T18:14:33 IST" duration-ms="23875">
     <groups>
     </groups>
-    <test started-at="2021-09-20T10:42:24 IST" name="Default test" finished-at="2021-09-20T10:42:45 IST" duration-ms="20741">
+    <test started-at="2021-09-21T18:14:09 IST" name="Default test" finished-at="2021-09-21T18:14:33 IST" duration-ms="23875">
       <class name="test.HomePageTest">
-        <test-method is-config="true" signature="BrowserSetup()[pri:0, instance:test.HomePageTest@39529185]" started-at="2021-09-20T10:42:24 IST" name="BrowserSetup" finished-at="2021-09-20T10:42:27 IST" duration-ms="3239" status="PASS">
+        <test-method is-config="true" signature="BrowserSetup()[pri:0, instance:test.HomePageTest@383bfa16]" started-at="2021-09-21T18:14:09 IST" name="BrowserSetup" finished-at="2021-09-21T18:14:14 IST" duration-ms="5009" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSetup -->
-        <test-method signature="SelectMovie()[pri:0, instance:test.HomePageTest@39529185]" started-at="2021-09-20T10:42:27 IST" name="SelectMovie" finished-at="2021-09-20T10:42:44 IST" duration-ms="16678" status="PASS">
+        <test-method signature="SelectMovie()[pri:0, instance:test.HomePageTest@383bfa16]" started-at="2021-09-21T18:14:14 IST" name="SelectMovie" finished-at="2021-09-21T18:14:33 IST" duration-ms="18803" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectMovie -->
-        <test-method is-config="true" signature="CloseBrowserSetup()[pri:0, instance:test.HomePageTest@39529185]" started-at="2021-09-20T10:42:44 IST" name="CloseBrowserSetup" finished-at="2021-09-20T10:42:44 IST" duration-ms="773" status="PASS">
+        <test-method is-config="true" signature="CloseBrowserSetup()[pri:0, instance:test.HomePageTest@383bfa16]" started-at="2021-09-21T18:14:33 IST" name="CloseBrowserSetup" finished-at="2021-09-21T18:14:33 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowserSetup -->

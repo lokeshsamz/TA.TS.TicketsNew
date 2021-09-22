@@ -16,6 +16,6 @@ public class WebBrowserHooks extends ReportHooks{
 	@AfterClass
 	public void CloseBrowserSetup()
 	{
-		//WebBrowser.CloseBrowser();
+		WebBrowser.CloseBrowser();
 	}
 }

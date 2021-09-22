@@ -20,12 +20,11 @@ public class HomePage extends ReportHooks{
 		try
 		{
 			this.browserUtils.NavigateToUrl(url);
-			ReportHooks.NodePassed("I have navigated to the home page");
-			
+			ReportHooks.NodePassed("I have navigated to the home page", false);		
 		}
 		catch (Exception e)
 		{
-			ReportHooks.NodeFailed("Failed to navigate to the home page");
+			ReportHooks.NodeFailed("Failed to navigate to the home page", e);
 		}
 	}
 		
@@ -39,8 +38,9 @@ public class HomePage extends ReportHooks{
 		}
 		catch (Exception e)
 		{
-			ReportHooks.NodeFailed("Failed to click the Movie name '" + movieName + "'");
+			ReportHooks.NodeFailed("Failed to click the Movie name '" + movieName + "'", e);
 		}
 	}
+	
 
 }

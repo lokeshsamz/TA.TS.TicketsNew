@@ -6,7 +6,7 @@ public interface IElementRepo {
 
 	//Home Page
 	By tab_HomePage_Movies = By.id("href_movies");
-	String Txt_HomePage_MovieName = "//h5/following-sibling::ul/child::li/a[text()= 'Friendship']/parent::li/a";
+	String Txt_HomePage_MovieName = "//h5/following-sibling::ul/child::li/a[text()= 'M_MovieName']/parent::li/a";
 	
 	//Movie Page
 	By tab_MoviePage_AvailableDates = By.xpath("//*[@id = 'ulShowDate']/li/a/span[@class = 'date']");

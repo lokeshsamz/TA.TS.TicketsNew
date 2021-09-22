@@ -5,9 +5,10 @@ import java.util.List;
 import org.openqa.selenium.By;
 
 import AutomationFramework.BrowserUtils;
+import AutomationFramework.TestHooks.ReportHooks;
 import ObjectRepository.IElementRepo;
 
-public class MoviesPage extends BrowserUtils{
+public class MoviesPage extends ReportHooks{
 	
 	private BrowserUtils browserUtils;
 	
@@ -18,8 +19,19 @@ public class MoviesPage extends BrowserUtils{
 	
 	public List<String> GetAvailableDates()
 	{
-		browserUtils.MoveToElement(IElementRepo.tab_MoviePage_AvailableDates);
-		return browserUtils.GetTextFromElements(IElementRepo.tab_MoviePage_AvailableDates);
+		List<String> availableDates = null;
+		try 
+		{
+			browserUtils.MoveToElement(IElementRepo.tab_MoviePage_AvailableDates);
+			availableDates = browserUtils.GetTextFromElements(IElementRepo.tab_MoviePage_AvailableDates);
+			ReportHooks.NodePassed("I retrieve the Available Dates");
+		}
+		catch(Exception e)
+		{
+			ReportHooks.NodeFailed("Failed to retrieve the Available Dates");
+		}
+		
+		return availableDates;
 	}
 
 	public List<String> GetAvailableTheatres()
@@ -32,7 +44,5 @@ public class MoviesPage extends BrowserUtils{
 	{
 		browserUtils.MoveToElement(By.xpath(IElementRepo.Txt_MoviePage_AvailableTheatreTimingDetails.replace("M_TheatreName", theatreName)));
 		return browserUtils.GetTextFromElements(By.xpath(IElementRepo.Txt_MoviePage_AvailableTheatreTimingDetails.replace("M_TheatreName", theatreName)));
-	}
-	
-	
+	}	
 }

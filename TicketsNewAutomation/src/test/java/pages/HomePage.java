@@ -3,9 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 
 import AutomationFramework.BrowserUtils;
+import AutomationFramework.TestHooks.ReportHooks;
 import ObjectRepository.IElementRepo;
 
-public class HomePage {
+public class HomePage extends ReportHooks{
 	
 	private BrowserUtils browserUtils;
 	
@@ -16,13 +17,30 @@ public class HomePage {
 	
 	public void LaunchHomePage(String url)
 	{
-		this.browserUtils.NavigateToUrl(url);
+		try
+		{
+			this.browserUtils.NavigateToUrl(url);
+			ReportHooks.NodePassed("I have navigated to the home page");
+			
+		}
+		catch (Exception e)
+		{
+			ReportHooks.NodeFailed("Failed to navigate to the home page");
+		}
 	}
 		
 	public void ClickMovieName(String movieName)
 	{
-		String locatorToClick = IElementRepo.Txt_HomePage_MovieName.replace("M_MovieName", movieName);
-		this.browserUtils.MouseHoverandClickElement(IElementRepo.tab_HomePage_Movies, By.xpath(locatorToClick));
+		try
+		{
+			String locatorToClick = IElementRepo.Txt_HomePage_MovieName.replace("M_MovieName", movieName);
+			this.browserUtils.MouseHoverandClickElement(IElementRepo.tab_HomePage_Movies, By.xpath(locatorToClick));
+			ReportHooks.NodePassed("I clicked the Movie name '" + movieName + "'");
+		}
+		catch (Exception e)
+		{
+			ReportHooks.NodeFailed("Failed to click the Movie name '" + movieName + "'");
+		}
 	}
 
 }

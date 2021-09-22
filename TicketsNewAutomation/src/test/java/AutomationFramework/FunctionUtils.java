@@ -9,4 +9,10 @@ public class FunctionUtils {
 		Random random = new Random();
 		return random.nextInt(withinBound);	 
 	}
+	
+	public static int RandomNumber(int withinBound)
+	{
+		Random random = new Random();
+		return random.nextInt(withinBound);	 
+	}
 }

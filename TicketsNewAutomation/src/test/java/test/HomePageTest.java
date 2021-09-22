@@ -34,17 +34,17 @@ public class HomePageTest extends WebBrowserHooks{
 		this.homePage.ClickMovieName("Friendship");
 		Thread.sleep(3000);
 		
-		System.out.println("Available dates : ");
-		moviePage.GetAvailableDates().forEach(x -> System.out.println(x));
-		
-		System.out.println("Available Theatres : ");
-		theatres = moviePage.GetAvailableTheatres();
-		theatres.forEach(x -> System.out.println(x));
-		
-		int randomNumber = functionUtils.GenerateRandomNumber(theatres.size());
-		System.out.println("Random Theatre: " + theatres.get(randomNumber));
-		List<String> theatreTimings = moviePage.GetAvailableTheatreTimingDetails(theatres.get(randomNumber));
-		System.out.println("Available Theatres Timings: ");
-		theatreTimings.forEach(x -> System.out.println(x));
+//		System.out.println("Available dates : ");
+//		moviePage.GetAvailableDates().forEach(x -> System.out.println(x));
+//		
+//		System.out.println("Available Theatres : ");
+//		theatres = moviePage.GetAvailableTheatres();
+//		theatres.forEach(x -> System.out.println(x));
+//		
+//		int randomNumber = functionUtils.GenerateRandomNumber(theatres.size());
+//		System.out.println("Random Theatre: " + theatres.get(randomNumber));
+//		List<String> theatreTimings = moviePage.GetAvailableTheatreTimingDetails(theatres.get(randomNumber));
+//		System.out.println("Available Theatres Timings: ");
+//		theatreTimings.forEach(x -> System.out.println(x));
 	}
 }

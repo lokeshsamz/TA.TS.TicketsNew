@@ -3,7 +3,9 @@ package AutomationFramework;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-public class WebBrowserHooks {
+import AutomationFramework.TestHooks.ReportHooks;
+
+public class WebBrowserHooks extends ReportHooks{
 
 	@BeforeClass
 	public void BrowserSetup()

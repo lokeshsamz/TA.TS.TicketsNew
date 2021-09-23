@@ -27,7 +27,7 @@ public class HomePageTest extends WebBrowserHooks{
 		List<String> theatres = new ArrayList<String>();
 		this.homePage.LaunchHomePage("https://www.ticketnew.com/online-advance-booking/Movies/C/Chennai");
 		Thread.sleep(3000);
-		this.browserUtils.MaximixeScreen();
+		this.browserUtils.MaximizeScreen();
 		Thread.sleep(2000);
 		this.homePage.ClickMovieName("Friendship");
 		Thread.sleep(3000);

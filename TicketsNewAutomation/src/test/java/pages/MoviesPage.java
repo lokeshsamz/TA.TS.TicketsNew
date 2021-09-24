@@ -1,10 +1,9 @@
 package pages;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
-
 import AutomationFramework.BrowserUtils;
+import AutomationFramework.Enums.Enums.SelectBy;
 import AutomationFramework.TestHooks.ReportHooks;
 import ObjectRepository.IElementRepo;
 
@@ -67,5 +66,46 @@ public class MoviesPage extends ReportHooks{
 		
 		return availableTheatreTimings;
 		
-	}	
+	}
+	
+	public void SelectFromAmenities(String text, boolean moveToElement) 
+	{
+		try 
+		{
+			browserUtils.SelectFromDropdown(SelectBy.VISIBLETEXT, IElementRepo.Dd_MoviePage_Amenities, text, moveToElement);
+			ReportHooks.NodePassed("I selected '" + text + "' from Amenities dropdown", true, text);
+		} 
+		catch (Exception e) 
+		{
+			ReportHooks.NodeFailed("Failed to select " + text + "' from Amenities dropdown", e);
+			e.printStackTrace();
+		}
+	}
+	
+	public void SelectFromExperience(String text, boolean moveToElement) 
+	{
+		try 
+		{
+			browserUtils.SelectFromDropdown(SelectBy.VISIBLETEXT, IElementRepo.Dd_MoviePage_Experience, text, moveToElement);
+			ReportHooks.NodePassed("I selected '" + text + "' from Experience dropdown", true, text);
+		} 
+		catch (Exception e) 
+		{
+			ReportHooks.NodeFailed("Failed to select " + text + "' from Experience dropdown", e);
+			e.printStackTrace();
+		}
+	}
+	
+	public void ClickTheatreTime(String theatreName, String time)
+	{
+		try 
+		{
+			browserUtils.ClickElement(By.xpath(IElementRepo.Txt_MoviePage_TheatreTime.replace("M_TheatreName", theatreName).replace("M_Time", time)));
+			ReportHooks.NodePassed("I clicked " + time + " of '" + theatreName + "'", false, "Selected - " + time);
+		}
+		catch(Exception e)
+		{
+			ReportHooks.NodeFailed("Failed to click " + time + " of '" + theatreName + "'", e);
+		}
+	}
 }

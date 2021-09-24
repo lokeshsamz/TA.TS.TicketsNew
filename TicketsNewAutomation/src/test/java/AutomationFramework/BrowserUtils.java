@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import AutomationFramework.Enums.Enums.SelectBy;
 
 public class BrowserUtils extends WebBrowser{
 
@@ -99,6 +101,13 @@ public class BrowserUtils extends WebBrowser{
 		return ListOfTexts;
 	}
 	
+	public List<String> GetTextFromElements(By locator, String attribute)
+	{
+		List<String> ListOfTexts = WebBrowser.driver.findElements(locator).stream().map(x -> x.getAttribute(attribute))
+																		 .collect(Collectors.toList());
+		return ListOfTexts;
+	}
+	
 	public String GetTextFromElement(By locator)
 	{
 		return WebBrowser.driver.findElement(locator).getText();
@@ -110,4 +119,31 @@ public class BrowserUtils extends WebBrowser{
 		WebElement element = WebBrowser.driver.findElement(locator);
 		actions.moveToElement(element).sendKeys(Keys.DOWN).build().perform();
 	}
+	
+	public void SelectFromDropdown(SelectBy option, By locator, String textOrIndex) throws Exception 
+	{
+		Select select = new Select(WebBrowser.driver.findElement(locator));
+		switch (option) 
+		{
+		case VISIBLETEXT: select.selectByVisibleText(textOrIndex.trim());
+		break;
+		case INDEX: select.selectByIndex(Integer.parseInt(textOrIndex.trim()));
+		break;
+		case VALUE: select.selectByValue(textOrIndex.trim());
+		break;
+		default:
+			throw new Exception("Invalid Input given");
+		}
+	}
+	
+	public void SelectFromDropdown(SelectBy option, By locator, String textOrIndex, boolean moveToElement) throws Exception 
+	{
+		if (moveToElement)  
+		{
+			this.MoveToElement(locator);
+		}
+		
+		this.SelectFromDropdown(option, locator, textOrIndex);
+	}
+	
 }

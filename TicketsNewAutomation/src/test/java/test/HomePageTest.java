@@ -67,7 +67,14 @@ public class HomePageTest extends WebBrowserHooks{
 		seatsNames.removeIf(emp -> emp.isEmpty() || emp.isBlank());
 		seatsNames.forEach(System.out::println);
 		
-		seatSelectionsPage.ClickSeats(seatsNames.stream().filter(x -> x.contains("C")).collect(Collectors.toList()));
+		List<String> SeatRowVariables =  seatsNames.stream().map(x -> x.replaceAll("[^A-Za-z]", "")).distinct().collect(Collectors.toList());
+		System.out.println("Available Seat Row Variables : ");
+		SeatRowVariables.forEach(System.out::println);
+		
+		String row = SeatRowVariables.get(FunctionUtils.GenerateRandomNumber(SeatRowVariables.size())).toString();
+		System.out.println("Selected Seat Row Variable : " + row);
+		
+		seatSelectionsPage.ClickSeats(seatsNames.stream().filter(x -> x.contains(row)).collect(Collectors.toList()));
 		System.out.println("Selected seat : " + seatsNames.get(randomNumber));
 		Thread.sleep(3000);
 		

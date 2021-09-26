@@ -1,11 +1,19 @@
 package AutomationFramework;
+import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import AutomationFramework.Enums.Enums.SelectBy;
 
 public class BrowserUtils extends WebBrowser{
@@ -94,6 +102,11 @@ public class BrowserUtils extends WebBrowser{
 		actions.moveToElement(element).moveToElement(WebBrowser.driver.findElement(locatorToClick)).click().build().perform();
 	}
 	
+	public String GetTextFromElement(By locator)
+	{
+		return WebBrowser.driver.findElement(locator).getText();
+	}
+	
 	public List<String> GetTextFromElements(By locator)
 	{
 		List<String> ListOfTexts = WebBrowser.driver.findElements(locator).stream().map(x -> x.getText())
@@ -101,16 +114,17 @@ public class BrowserUtils extends WebBrowser{
 		return ListOfTexts;
 	}
 	
-	public List<String> GetTextFromElements(By locator, String attribute)
+	public String GetAttributeValueFromElement(By locator, String attribute)
+	{
+		String value = WebBrowser.driver.findElement(locator).getAttribute(attribute);
+		return value;
+	}
+	
+	public List<String> GetAttributeValueFromElements(By locator, String attribute)
 	{
 		List<String> ListOfTexts = WebBrowser.driver.findElements(locator).stream().map(x -> x.getAttribute(attribute))
 																		 .collect(Collectors.toList());
 		return ListOfTexts;
-	}
-	
-	public String GetTextFromElement(By locator)
-	{
-		return WebBrowser.driver.findElement(locator).getText();
 	}
 	
 	public void MoveToElement(By locator)
@@ -144,6 +158,11 @@ public class BrowserUtils extends WebBrowser{
 		}
 		
 		this.SelectFromDropdown(option, locator, textOrIndex);
+	}
+	
+	public void IsPageLoadedNew(By locator)
+	{
+		new WebDriverWait(WebBrowser.driver, Duration.ofSeconds(10)).until(x -> x.findElement(locator)); 
 	}
 	
 }

@@ -37,10 +37,6 @@ public class ExtentReportUtils {
 		ExtentSparkReporter spark = new ExtentSparkReporter(reportDirectory + "/index.html");
 		spark.config().setReportName("Sample Extent Report");
 		extent.attachReporter(spark);
-		System.out.println("Method name from attachreport() : "  + getMethodName(0));
-		System.out.println("Method name from attachreport() : "  + getMethodName(1));
-		System.out.println("Method name from attachreport() : "  + getMethodName(2));
-		System.out.println("Method name from attachreport() : "  + getMethodName(3));
 		test = extent.createTest("MyFirstTest");			
 	}
 	
@@ -130,9 +126,7 @@ public class ExtentReportUtils {
 	public static String getMethodName(final int depth)
 	{
 	  final StackTraceElement[] ste = Thread.currentThread().getStackTrace();
-	  System.out.println("Method Nme: " + ste.toString());
-	  //System. out.println(ste[ste.length-depth].getClassName()+"#"+ste[ste.length-depth].getMethodName());
-	  // return ste[ste.length - depth].getMethodName();  //Wrong, fails for depth = 0
-	  return ste[ste.length - 1 - depth].getMethodName(); //Thank you Tom Tresansky
+	  System.out.println("Method Name: " + ste.toString());
+	  return ste[ste.length - 1 - depth].getMethodName();
 	}
 }

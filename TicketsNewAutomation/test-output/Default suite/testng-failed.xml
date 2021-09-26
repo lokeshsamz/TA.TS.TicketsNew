@@ -5,10 +5,10 @@
     <classes>
       <class name="test.HomePageTest">
         <methods>
-          <include name="AttachReport"/>
+          <include name="FlushReport"/>
           <include name="CloseBrowserSetup"/>
           <include name="BrowserSetup"/>
-          <include name="closeReport"/>
+          <include name="AddReport"/>
           <include name="SelectMovie"/>
         </methods>
       </class> <!-- test.HomePageTest -->

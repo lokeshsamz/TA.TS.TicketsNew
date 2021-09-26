@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-09-23T00:11:16 IST" name="Default suite" finished-at="2021-09-23T00:11:42 IST" duration-ms="25422">
+  <suite started-at="2021-09-24T22:25:22 IST" name="Default suite" finished-at="2021-09-24T22:26:10 IST" duration-ms="48604">
     <groups>
     </groups>
-    <test started-at="2021-09-23T00:11:16 IST" name="Default test" finished-at="2021-09-23T00:11:42 IST" duration-ms="25422">
+    <test started-at="2021-09-24T22:25:22 IST" name="Default test" finished-at="2021-09-24T22:26:10 IST" duration-ms="48604">
       <class name="test.HomePageTest">
-        <test-method is-config="true" signature="AddReport()[pri:0, instance:test.HomePageTest@49049a04]" started-at="2021-09-23T00:11:16 IST" name="AddReport" finished-at="2021-09-23T00:11:16 IST" duration-ms="393" status="PASS">
+        <test-method is-config="true" signature="AddReport()[pri:0, instance:test.HomePageTest@27462a88]" started-at="2021-09-24T22:25:22 IST" name="AddReport" finished-at="2021-09-24T22:25:22 IST" duration-ms="428" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddReport -->
-        <test-method is-config="true" signature="BrowserSetup()[pri:0, instance:test.HomePageTest@49049a04]" started-at="2021-09-23T00:11:17 IST" name="BrowserSetup" finished-at="2021-09-23T00:11:20 IST" duration-ms="3686" status="PASS">
+        <test-method is-config="true" signature="BrowserSetup()[pri:0, instance:test.HomePageTest@27462a88]" started-at="2021-09-24T22:25:22 IST" name="BrowserSetup" finished-at="2021-09-24T22:25:26 IST" duration-ms="3827" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSetup -->
-        <test-method signature="SelectMovie()[pri:0, instance:test.HomePageTest@49049a04]" started-at="2021-09-23T00:11:20 IST" name="SelectMovie" finished-at="2021-09-23T00:11:40 IST" duration-ms="20002" status="PASS">
+        <test-method signature="SelectMovie()[pri:0, instance:test.HomePageTest@27462a88]" started-at="2021-09-24T22:25:26 IST" name="SelectMovie" finished-at="2021-09-24T22:26:09 IST" duration-ms="42996" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectMovie -->
-        <test-method is-config="true" signature="CloseBrowserSetup()[pri:0, instance:test.HomePageTest@49049a04]" started-at="2021-09-23T00:11:40 IST" name="CloseBrowserSetup" finished-at="2021-09-23T00:11:41 IST" duration-ms="750" status="PASS">
+        <test-method is-config="true" signature="CloseBrowserSetup()[pri:0, instance:test.HomePageTest@27462a88]" started-at="2021-09-24T22:26:09 IST" name="CloseBrowserSetup" finished-at="2021-09-24T22:26:10 IST" duration-ms="758" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowserSetup -->
-        <test-method is-config="true" signature="FlushReport()[pri:0, instance:test.HomePageTest@49049a04]" started-at="2021-09-23T00:11:41 IST" name="FlushReport" finished-at="2021-09-23T00:11:42 IST" duration-ms="540" status="PASS">
+        <test-method is-config="true" signature="FlushReport()[pri:0, instance:test.HomePageTest@27462a88]" started-at="2021-09-24T22:26:10 IST" name="FlushReport" finished-at="2021-09-24T22:26:10 IST" duration-ms="543" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FlushReport -->

@@ -22,8 +22,7 @@ public class SeatSelectionsPage extends ReportHooks{
 		List<String> availableSeats = null;
 		try 
 		{
-			//browserUtils.MoveToElement(IElementRepo.Txt_SeatSelectionPage_AvailableSeatNames);
-			availableSeats = browserUtils.GetTextFromElements(IElementRepo.Txt_SeatSelectionPage_AvailableSeatNames, "data-seatname");
+			availableSeats = browserUtils.GetAttributeValueFromElements(IElementRepo.Txt_SeatSelectionPage_AvailableSeatNames, "data-seatname");
 			ReportHooks.NodePassed("I retrieve the Available Seats", true, String.join(", ", availableSeats));
 		}
 		catch(Exception e)
@@ -46,7 +45,6 @@ public class SeatSelectionsPage extends ReportHooks{
 			ReportHooks.NodeFailed("Failed to click given seat(s)", e);
 		}	
 	}
-
 	
 	public void ClickContinueButton()
 	{
